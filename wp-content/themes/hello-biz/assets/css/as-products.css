@@ -1,0 +1,123 @@
+/* AS Aluminium Product Cards Section */
+
+.as-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.as-product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    /* Rounded corners like screenshot */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.as-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+.as-product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background-color: #f0f0f0;
+}
+
+/* Content */
+.as-product-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Headline */
+.as-product-title {
+    font-family: 'Staatliches', cursive;
+    font-size: 28px;
+    margin: 0 0 15px 0;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+/* Description */
+.as-product-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Tags (Pills) */
+.as-product-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.as-product-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #333;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* Actions (Buttons) */
+.as-product-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.as-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.as-btn-details {
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.as-btn-details:hover {
+    background: #f0f0f0;
+    border-color: #ccc;
+}
+
+.as-btn-inquiry {
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.as-btn-inquiry:hover {
+    background: #f0f0f0;
+    border-color: #ccc;
+}

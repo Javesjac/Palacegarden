@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&family=Staatliches&display=swap');
+
+:root {
+    /* Colors matches Homepage (.as-landing) */
+    --color-primary: #1B9C85;
+    --color-primary-hover: #178E79;
+    --color-accent: #4c6d74;
+    --color-dark: #000000;
+
+    --color-text: #0d1b1e;
+    /* Dark elegant text */
+    --color-text-light: #475569;
+    /* Updated to match Home --muted */
+    --color-bg-light: #f6f8f9;
+    /* Updated to match Home --soft */
+    --color-bg-white: #FFFFFF;
+    --color-border: #e5e7eb;
+    /* Updated to match Home */
+
+    /* Typography - AS-Aluminium Style */
+    --font-heading: 'Staatliches', cursive;
+    /* Restored for Headlines */
+    --font-body: 'Poppins', sans-serif;
+    /* Clean body text */
+
+    /* Spacing */
+    --container-width: 1140px;
+    --header-height: 90px;
+    --section-spacing: 4rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-bg-white);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #334155;
+    /* Dark grey/slate for generic buttons if needed, or primary */
+    color: white;
+    font-weight: 700;
+    border-radius: 30px;
+    /* Rounded pill style from screenshot */
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #334155;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: var(--color-dark);
+    border-radius: 4px;
+    /* Default square-ish for cards */
+}
+
+.btn-outline:hover {
+    border-color: var(--color-dark);
+    background: var(--color-dark);
+    color: white;
+}
+
+/* Header Buttons Specifics */
+.header-actions .btn {
+    border-radius: 30px;
+    padding: 8px 20px;
+}
+
+.header-actions .btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.header-actions .btn-outline:hover {
+    border-color: white;
+    background: transparent;
+}
+
+.header-actions .btn-primary {
+    background: #334155;
+    /* Similar to screenshot "Kontakt" */
+    color: white;
+}
+
+
+/* Main Styles */
+/* =========================================
+   Reset & Global
+   ========================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-top: var(--header-height);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section {
+    padding: var(--section-spacing) 0;
+}
+
+.bg-light {
+    background-color: var(--color-bg-light);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+}
+
+/* =========================================
+   Header
+   ========================================= */
+.site-header {
+    background-color: black;
+    /* Screenshot shows black */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo {
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-item>a {
+    color: #ccc;
+    /* Greyish text */
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 10px 0;
+    display: block;
+}
+
+.nav-item>a:hover,
+.nav-item.active>a {
+    color: white;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero-section {
+    position: relative;
+    /* height: 600px; Remove fixed height to allow content flow if needed, or keep for banner */
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: calc(-1 * var(--header-height));
+    padding-top: var(--header-height);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-bg .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+}
+
+.hero-content {
+    max-width: 900px;
+    text-align: center;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* =========================================
+   Services Grid (NEW)
+   ========================================= */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.service-card-large {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* No shadow by default in screenshot, maybe subtle */
+}
+
+.service-card-large .media {
+    height: 400px;
+    /* Taller images */
+    margin: 0;
+}
+
+.service-card-large .media img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.service-card-large .body {
+    padding: 30px 0;
+    /* No side padding? Screenshot shows text aligned with image edge? No, usually padding. */
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.service-card-large h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.service-card-large .desc {
+    margin-bottom: 25px;
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.tags .tag {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.actions {
+    margin-top: auto;
+    display: flex;
+    gap: 15px;
+}
+
+.actions .btn-action {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 24px;
+    color: var(--color-dark);
+    font-weight: 700;
+    text-transform: none;
+    /* Screenshot shows "Details", not CAPS? No, standard usually. Screenshot "Details" "Anfrage" look Title Case */
+    font-size: 0.95rem;
+}
+
+.actions .btn-action:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+}
+
+/* =========================================
+   Why Us & Other Sections
+   ========================================= */
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.check-list li {
+    margin-bottom: 10px;
+}
+
+/* ... (Rest of existing styles for Gallery, FAQ, etc. can be preserved or simplified) */

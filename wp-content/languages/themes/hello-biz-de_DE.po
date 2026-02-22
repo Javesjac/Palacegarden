@@ -1,0 +1,381 @@
+# Translation of Themes - Hello Biz in German
+# This file is distributed under the same license as the Themes - Hello Biz package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-12-28 22:49:40+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: de\n"
+"Project-Id-Version: Themes - Hello Biz\n"
+
+#. Description of the theme
+#: style.css
+#, gp-priority: high
+msgid "Hello Biz is a free, user-friendly Hybrid WordPress Theme that was crafted for seamless integration with the Elementor site builder and tailored specifically for business websites. Perfect for beginners, but far from limited to just them, it features a dedicated beginner-oriented “Home” screen to simplify and streamline the web-building process. Hello Biz also integrates with Elementor’s premium features, giving you access to tools like AI, and accessibility enhancements in one place. Whether launching a startup site or refining a company portfolio, Hello Biz offers a solid, responsive foundation for all web creators. Report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team validates, triages, and handles vulnerabilities. Report here: https://patchstack.com/database/wordpress/theme/hello-biz/vdp."
+msgstr ""
+"Hello Biz ist ein kostenloses, benutzerfreundliches hybrides WordPress-Theme, das für die nahtlose Integration mit dem Elementor-Website-Builder entwickelt wurde und speziell auf Unternehmenswebsites zugeschnitten ist. Es eignet sich perfekt für Einsteiger, ist aber keineswegs auf sie beschränkt. Ein spezieller, auf Anfänger ausgerichteter „Start“-Bildschirm vereinfacht und optimiert den Website-Erstellungsprozess.\n"
+"Darüber hinaus integriert sich Hello Biz mit den Premium-Funktionen von Elementor und bietet dir Zugang zu Tools wie KI und Verbesserungen der Barrierefreiheit – alles an einem Ort. Ob für den Start einer neuen Website oder die Optimierung eines Unternehmensportfolios: Hello Biz bietet allen Web-Erstellern eine solide, responsive Grundlage.\n"
+"Sicherheitslücken können über das Patchstack Vulnerability Disclosure Program gemeldet werden. Das Patchstack-Team validiert, priorisiert und bearbeitet die gemeldeten Schwachstellen. Hier melden: https://patchstack.com/database/wordpress/theme/hello-biz/vdp"
+
+#. Theme Name of the theme
+#: style.css modules/admin-home/components/admin-menu-controller.php:28
+#: modules/admin-home/components/admin-menu-controller.php:29
+#: assets/js/hello-biz-admin-top-bar.js:1
+#, gp-priority: high
+msgid "Hello Biz"
+msgstr "Hello-Biz"
+
+#: includes/welcome-banner-config.php:57
+#: modules/admin-home/components/admin-menu-controller.php:92
+msgid "Begin setup"
+msgstr "Einrichtung beginnen"
+
+#: includes/welcome-banner-config.php:53
+#: modules/admin-home/components/admin-menu-controller.php:89
+msgid "Finish setup"
+msgstr "Einrichtung abschließen"
+
+#: modules/admin-home/rest/install-confirmation.php:43
+msgid "User not found."
+msgstr "Der Benutzer wurde nicht gefunden."
+
+#: modules/admin-home/rest/promotions.php:49
+msgid "Connect any website to automated Email & SMS workflows in a click with Send."
+msgstr "Verbinde jede Website mit automatisierten E-Mail- und SMS-Workflows mit nur einem Klick über Send."
+
+#: modules/admin-home/rest/promotions.php:46
+msgid "Send"
+msgstr "Send"
+
+#: modules/admin-home/rest/admin-config.php:302
+msgid "Site Favicon"
+msgstr "Website Favicon"
+
+#: modules/admin-home/rest/admin-config.php:259
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: modules/admin-home/components/admin-menu-controller.php:54
+#: modules/admin-home/components/admin-menu-controller.php:55
+#: modules/admin-home/rest/admin-config.php:219
+msgid "Theme Builder"
+msgstr "Theme-Builder"
+
+#: modules/admin-home/rest/admin-config.php:90
+msgid "Platinum Support"
+msgstr "Platin-Support"
+
+#: modules/admin-home/rest/admin-config.php:84
+msgid "Blog"
+msgstr "Blog"
+
+#: modules/admin-home/rest/admin-config.php:78
+msgid "Help Center"
+msgstr "Hilfe-Center"
+
+#: modules/admin-home/rest/admin-config.php:70
+msgid "Rate Us"
+msgstr "Bewerte uns"
+
+#: modules/admin-home/rest/admin-config.php:65
+msgid "Discord"
+msgstr "Discord"
+
+#: modules/admin-home/rest/admin-config.php:59
+msgid "YouTube"
+msgstr "YouTube"
+
+#: modules/admin-home/rest/admin-config.php:53
+msgid "Facebook"
+msgstr "Facebook"
+
+#: modules/admin-home/rest/admin-config.php:263
+msgid "Add New"
+msgstr "Hinzufügen"
+
+#. translators: %d: Number of search results
+#: template-parts/search.php:27
+msgid "%d result"
+msgid_plural "%d results"
+msgstr[0] "%d Ergebnis"
+msgstr[1] "%d Ergebnisse"
+
+#: template-parts/404.php:17
+msgid "404"
+msgstr "404"
+
+#: template-parts/search.php:91
+msgid "Previous"
+msgstr "Vorherige"
+
+#: template-parts/search.php:102
+msgid "Next"
+msgstr "Nächster"
+
+#. translators: 1: Number of results, 2: Search term
+#: template-parts/search.php:33
+msgid "%1$s found for %2$s"
+msgstr "%1$s Ergebnisse für %2$s"
+
+#: template-parts/404.php:31
+msgid "Try searching or <a href=\"%s\">return to homepage</a>."
+msgstr "Versuche es mit einer Suche oder gehe <a href=\"%s\">zurück zur Startseite</a>."
+
+#: template-parts/404.php:20
+msgid "We can't find that page"
+msgstr "Wir können die Seite nicht finden"
+
+#: searchform.php:15
+msgctxt "placeholder"
+msgid "Search…"
+msgstr "Suchen …"
+
+#: searchform.php:14
+msgctxt "label"
+msgid "Search for:"
+msgstr "Suchen nach:"
+
+#: searchform.php:18 searchform.php:23
+msgctxt "submit button"
+msgid "Search"
+msgstr "Suchen"
+
+#: modules/admin-home/rest/promotions.php:27
+msgid "Optimize Images."
+msgstr "Bilder optimieren."
+
+#: modules/admin-home/rest/promotions.php:30
+msgid "Try Image Optimizer for free"
+msgstr "Teste den Image Optimizer kostenlos"
+
+#: modules/admin-home/rest/promotions.php:29
+msgid "Improve Speed."
+msgstr "Geschwindigkeit verbessern"
+
+#: modules/admin-home/rest/promotions.php:28
+msgid "Reduce Size."
+msgstr "Größe verkleinern."
+
+#: modules/theme/starter-content/home.php:400
+msgctxt "Theme starter content"
+msgid "Home"
+msgstr "Start"
+
+#: template-parts/header.php:43
+msgid "Main menu"
+msgstr "Hauptmenü"
+
+#: template-parts/footer.php:21
+msgid "Footer menu"
+msgstr "Footer-Menü"
+
+#: modules/theme/classes/customizer-action-links.php:61
+msgid "Elementor"
+msgstr "Elementor"
+
+#: modules/admin-home/rest/promotions.php:92
+msgid "Form Integrations"
+msgstr "Formular-Integrationen"
+
+#: modules/admin-home/rest/promotions.php:87
+msgid "Popup Builder"
+msgstr "Popup-Builder"
+
+#: modules/admin-home/rest/promotions.php:84
+msgid "Upgrade Now"
+msgstr "Jetzt upgraden"
+
+#: modules/admin-home/rest/promotions.php:79
+msgid "Elementor Pro"
+msgstr "Elementor Pro"
+
+#: modules/admin-home/rest/promotions.php:32
+#: modules/admin-home/rest/promotions.php:51
+msgid "Install"
+msgstr "Installieren"
+
+#: includes/welcome-banner-config.php:123
+msgid "View site"
+msgstr "Website anzeigen"
+
+#: includes/welcome-banner-config.php:55
+msgid "Edit home page"
+msgstr "Homepage bearbeiten"
+
+#: modules/admin-home/rest/admin-config.php:310
+msgid "Site Colors"
+msgstr "Webseite-Farben"
+
+#: modules/admin-home/rest/admin-config.php:297
+msgid "Site Logo"
+msgstr "Website-Logo"
+
+#: modules/admin-home/rest/admin-config.php:208
+#: modules/theme/components/theme-support.php:23
+msgid "Footer"
+msgstr "Footer"
+
+#: modules/admin-home/rest/admin-config.php:200
+#: modules/theme/components/theme-support.php:22
+msgid "Header"
+msgstr "Header"
+
+#: modules/admin-home/rest/admin-config.php:189
+#: modules/settings/components/settings-menu.php:16
+#: modules/settings/components/settings-menu.php:17
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: modules/admin-home/rest/admin-config.php:184
+msgid "Add New Page"
+msgstr "Neue Seite erstellen"
+
+#: header.php:31
+msgid "Skip to content"
+msgstr "Zum Inhalt springen"
+
+#: modules/theme/components/customizer.php:22
+msgid "Header & Footer"
+msgstr "Header und Footer"
+
+#: modules/admin-home/rest/promotions.php:70
+msgid "Let's Go"
+msgstr "Los geht's"
+
+#: modules/admin-home/rest/admin-config.php:316
+msgid "Site Fonts"
+msgstr "Website-Schriften"
+
+#: includes/module-base.php:259 includes/module-base.php:270
+msgid "Something went wrong."
+msgstr "Ein Fehler ist aufgetreten."
+
+#: comments.php:37
+msgctxt "comments title"
+msgid "%s Response"
+msgid_plural "%s Responses"
+msgstr[0] "%s Antwort"
+msgstr[1] "%s Antworten"
+
+#: comments.php:32
+msgctxt "comments title"
+msgid "One Response"
+msgstr "Eine Antwort"
+
+#: modules/admin-home/rest/admin-config.php:292
+msgid "Site Name"
+msgstr "Website-Name"
+
+#: includes/welcome-banner-config.php:28
+msgid "Welcome to Hello Biz"
+msgstr "Willkommen bei Hello Biz"
+
+#: template-parts/single.php:31
+msgid "Tagged "
+msgstr "Verschlagwortet "
+
+#: template-parts/search.php:73
+msgid "It seems we can't find what you're looking for."
+msgstr "Anscheinend kann das Gesuchte nicht gefunden werden."
+
+#. translators: %s: HTML entity for arrow character.
+#: template-parts/archive.php:54
+msgid "Next %s"
+msgstr "Nächster %s"
+
+#. translators: %s: HTML entity for arrow character.
+#: template-parts/archive.php:50
+msgid "%s Previous"
+msgstr "%s Vorherige"
+
+#: modules/theme/classes/customizer-action-links.php:55
+msgid "Finish Setup"
+msgstr "Einrichtung abschließen"
+
+#: modules/admin-home/rest/theme-settings.php:52
+msgid "Settings must be an array"
+msgstr "Einstellungen müssen ein Array sein"
+
+#: modules/admin-home/rest/promotions.php:94
+msgid "Role Manager"
+msgstr "Rollenmanager"
+
+#: modules/admin-home/rest/promotions.php:89
+msgid "E-commerce Features"
+msgstr "E-Commerce-Funktionen"
+
+#: modules/admin-home/rest/promotions.php:88
+msgid "Custom Code & CSS"
+msgstr "Individueller Code & CSS"
+
+#: modules/theme/classes/customizer-action-links.php:66
+msgid "By clicking “Begin setup” I agree to install and activate the Hello+ plugin."
+msgstr "Durch Klick auf \"Einrichtung starten\" stimme ich der Installation und Aktivierung des Hello+ Plugins zu."
+
+#: modules/admin-home/rest/promotions.php:93
+msgid "Customs Attribute"
+msgstr "Individuelles Attribut"
+
+#: modules/admin-home/rest/promotions.php:90
+msgid "Collaborative Notes"
+msgstr "Kollaborative Notizen"
+
+#: modules/admin-home/rest/promotions.php:82
+msgid "Get complete design flexibility for your website with Elementor Pro’s advanced tools and premium features."
+msgstr "Hol dir vollständige Design-Flexibilität für deine Website mit den erweiterten Werkzeugen und Premium-Funktionen von Elementor Pro."
+
+#: modules/admin-home/rest/promotions.php:80
+msgid "Bring your vision to life"
+msgstr "Erwecke deine Vision zum Leben"
+
+#: modules/admin-home/rest/promotions.php:68
+msgid "Boost creativity with Elementor AI. Craft & enhance copy, create custom CSS & Code, and generate images to elevate your website."
+msgstr "Steigere deine Kreativität mit Elementor AI. Erstelle und verbessere Texte, generiere individuelle CSS und Code und Bilder, um deine Website aufzuwerten."
+
+#: modules/admin-home/rest/promotions.php:65
+#: modules/admin-home/rest/promotions.php:66
+msgid "Elementor AI"
+msgstr "Elementor AI"
+
+#: modules/admin-home/rest/promotions.php:24
+msgid "Elementor Image Optimizer"
+msgstr "Elementor Image Optimizer"
+
+#: modules/theme/classes/customizer-action-links.php:46
+msgid "Begin Setup"
+msgstr "Einrichtung beginnen"
+
+#: modules/admin-home/rest/promotions.php:91
+msgid "Form Submission"
+msgstr "Formularübermittlung"
+
+#: modules/conversion-banner/components/conversion-banner.php:109
+msgid "Notice dismissed."
+msgstr "Hinweis verworfen"
+
+#: modules/admin-home/components/admin-menu-controller.php:39
+#: modules/admin-home/components/admin-menu-controller.php:40
+#: template-parts/header.php:30
+msgid "Home"
+msgstr "Start"
+
+#. Author URI of the theme
+#: style.css
+#, gp-priority: low
+msgid "https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash"
+msgstr "https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash"
+
+#. Theme URI of the theme
+#: style.css
+#, gp-priority: low
+msgid "https://elementor.com/products/hello-biz/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash"
+msgstr "https://elementor.com/products/hello-biz/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash"
+
+#. Author of the theme
+#: style.css
+#, gp-priority: low
+msgid "Elementor Team"
+msgstr "Elementor Team"
