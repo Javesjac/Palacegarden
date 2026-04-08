@@ -361,15 +361,11 @@ get_header();
                 Heeft u vragen of plannen voor een project? Wij staan voor u klaar.
             </p>
 
-            <div id="form-success" style="display:none; background:#d4edda; color:#155724; border:1px solid #c3e6cb; border-radius:8px; padding:20px 24px; margin-bottom:24px; font-weight:600;">
-                Bedankt! Uw bericht is verzonden. Wij nemen zo snel mogelijk contact met u op.
-            </div>
-            <div id="form-error" style="display:none; background:#f8d7da; color:#721c24; border:1px solid #f5c6cb; border-radius:8px; padding:20px 24px; margin-bottom:24px; font-weight:600;">
-                Er is iets misgegaan. Probeer het opnieuw of neem contact op via e-mail.
-            </div>
+            <div id="form-success" style="display:none; background:#d4edda; color:#155724; border:1px solid #c3e6cb; border-radius:8px; padding:20px 24px; margin-bottom:24px; font-weight:600;"></div>
+            <div id="form-error" style="display:none; background:#f8d7da; color:#721c24; border:1px solid #f5c6cb; border-radius:8px; padding:20px 24px; margin-bottom:24px; font-weight:600;"></div>
 
             <form id="palace-contact-form" class="contact-form">
-                <input type="hidden" name="_subject" value="Nieuw bericht van Palace Garden Website">
+                <?php wp_nonce_field('palace_contact_form', 'palace_nonce'); ?>
 
                 <!-- Row 1: Name & Email -->
                 <div class="form-grid">
@@ -550,22 +546,28 @@ document.getElementById('palace-contact-form').addEventListener('submit', async 
     successMsg.style.display = 'none';
     errorMsg.style.display = 'none';
 
+    const data = new FormData(form);
+    data.append('action', 'palace_contact');
+
     try {
-        const data = new FormData(form);
-        const response = await fetch('https://formspree.io/f/xwvqwlby', {
+        const response = await fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
             method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
+            body: data
         });
 
-        if (response.ok) {
+        const result = await response.json();
+
+        if (result.success) {
+            successMsg.textContent = result.data.message;
             successMsg.style.display = 'block';
             form.reset();
             successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
+            errorMsg.textContent = result.data.message;
             errorMsg.style.display = 'block';
         }
     } catch (err) {
+        errorMsg.textContent = 'Er is iets misgegaan. Probeer het opnieuw of neem contact op via info@palacegarden.nl';
         errorMsg.style.display = 'block';
     } finally {
         submitBtn.disabled = false;

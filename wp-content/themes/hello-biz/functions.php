@@ -390,3 +390,63 @@ function palace_garden_fonts()
     wp_enqueue_style('palace-google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Staatliches&display=swap', array(), null);
 }
 add_action('wp_enqueue_scripts', 'palace_garden_fonts');
+
+/**
+ * CONTACT FORM — WordPress AJAX Handler
+ * No external service dependency. Uses wp_mail() directly.
+ */
+function palace_contact_form_handler()
+{
+    // Verify nonce
+    if (!isset($_POST['palace_nonce']) || !wp_verify_nonce($_POST['palace_nonce'], 'palace_contact_form')) {
+        wp_send_json_error(['message' => 'Beveiligingscontrole mislukt. Vernieuw de pagina en probeer opnieuw.']);
+    }
+
+    // Sanitize inputs
+    $name    = sanitize_text_field($_POST['contact_name'] ?? '');
+    $email   = sanitize_email($_POST['contact_email'] ?? '');
+    $phone   = sanitize_text_field($_POST['contact_phone'] ?? '');
+    $company = sanitize_text_field($_POST['contact_company'] ?? '');
+    $subject = sanitize_text_field($_POST['contact_subject'] ?? '');
+    $message = sanitize_textarea_field($_POST['contact_message'] ?? '');
+    $date    = sanitize_text_field($_POST['contact_date'] ?? '');
+    $pref    = sanitize_text_field($_POST['contact_preference'] ?? '');
+
+    // Validate required fields
+    if (empty($name) || empty($email) || empty($message)) {
+        wp_send_json_error(['message' => 'Vul alle verplichte velden in (Naam, E-mail, Bericht).']);
+    }
+    if (!is_email($email)) {
+        wp_send_json_error(['message' => 'Voer een geldig e-mailadres in.']);
+    }
+
+    // Build email
+    $to      = get_option('admin_email');
+    $subject_line = 'Nieuw contactbericht van ' . $name . ' – Palace Garden';
+
+    $body  = "Nieuw bericht via het contactformulier op palacegarden.nl\n";
+    $body .= str_repeat('-', 50) . "\n\n";
+    $body .= "Naam:              $name\n";
+    $body .= "E-mail:            $email\n";
+    if ($phone)   $body .= "Telefoon:          $phone\n";
+    if ($company) $body .= "Bedrijf:           $company\n";
+    if ($subject) $body .= "Onderwerp:         $subject\n";
+    if ($date)    $body .= "Overlegdatum:      $date\n";
+    if ($pref)    $body .= "Contactvoorkeur:   $pref\n";
+    $body .= "\nBericht:\n$message\n";
+
+    $headers = [
+        'Content-Type: text/plain; charset=UTF-8',
+        'Reply-To: ' . $name . ' <' . $email . '>',
+    ];
+
+    $sent = wp_mail($to, $subject_line, $body, $headers);
+
+    if ($sent) {
+        wp_send_json_success(['message' => 'Bedankt! Uw bericht is verzonden. Wij nemen zo snel mogelijk contact met u op.']);
+    } else {
+        wp_send_json_error(['message' => 'Verzenden mislukt. Neem contact op via info@palacegarden.nl of bel ons.']);
+    }
+}
+add_action('wp_ajax_palace_contact', 'palace_contact_form_handler');
+add_action('wp_ajax_nopriv_palace_contact', 'palace_contact_form_handler');
