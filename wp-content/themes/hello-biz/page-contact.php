@@ -361,11 +361,15 @@ get_header();
                 Heeft u vragen of plannen voor een project? Wij staan voor u klaar.
             </p>
 
-            <form id="palace-contact-form" class="contact-form" action="https://formspree.io/f/xwvqwlby" method="POST"
-                enctype="multipart/form-data">
+            <div id="form-success" style="display:none; background:#d4edda; color:#155724; border:1px solid #c3e6cb; border-radius:8px; padding:20px 24px; margin-bottom:24px; font-weight:600;">
+                Bedankt! Uw bericht is verzonden. Wij nemen zo snel mogelijk contact met u op.
+            </div>
+            <div id="form-error" style="display:none; background:#f8d7da; color:#721c24; border:1px solid #f5c6cb; border-radius:8px; padding:20px 24px; margin-bottom:24px; font-weight:600;">
+                Er is iets misgegaan. Probeer het opnieuw of neem contact op via e-mail.
+            </div>
+
+            <form id="palace-contact-form" class="contact-form">
                 <input type="hidden" name="_subject" value="Nieuw bericht van Palace Garden Website">
-                <input type="hidden" name="_next" value="<?php echo home_url('/contact/'); ?>?success=true">
-                <?php wp_nonce_field('palace_contact_nonce', 'palace_nonce'); ?>
 
                 <!-- Row 1: Name & Email -->
                 <div class="form-grid">
@@ -531,6 +535,45 @@ get_header();
 
     </div>
 </main>
+
+<script>
+document.getElementById('palace-contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const submitBtn = form.querySelector('.submit-btn');
+    const successMsg = document.getElementById('form-success');
+    const errorMsg = document.getElementById('form-error');
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Verzenden...';
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+
+    try {
+        const data = new FormData(form);
+        const response = await fetch('https://formspree.io/f/xwvqwlby', {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            successMsg.style.display = 'block';
+            form.reset();
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+            errorMsg.style.display = 'block';
+        }
+    } catch (err) {
+        errorMsg.style.display = 'block';
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'ADVIESGESPREK AANVRAGEN';
+    }
+});
+</script>
+
 <?php
 get_footer();
 ?>
